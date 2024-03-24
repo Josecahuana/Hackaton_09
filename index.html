@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="botons">
+        <button type="button" id="exer1" onclick="ejercicio1()">
+            Ejercicio 1
+        </button>
+        <button type="button" id="exer2" onclick="ejercicio2()">
+            Ejercicio 2
+        </button>
+        <button type="button" id="exer3" onclick="ejercicio3()">
+            Ejercicio 3
+        </button>
+        <button type="button" id="exer4" onclick="ejercicio4()">
+            Ejercicio 4
+        </button>
+        <button type="button" id="exer5" onclick="ejercicio5()">
+            Ejercicio 5
+        </button>
+        <button type="button" id="exer6" onclick="ejercicio6()">
+            Ejercicio 6
+        </button>
+        <button type="button" id="exer7" onclick="ejercicio7()">
+            Ejercicio 7
+        </button>
+        <button type="button" id="exer8" onclick="ejercicio8()">
+            Ejercicio 8
+        </button>
+        <button type="button" id="exer9" onclick="ejercicio9()">
+            Ejercicio 9
+        </button>
+        <button type="button" id="exer10" onclick="ejercicio10()">
+            Ejercicio 10
+        </button>
+        <button type="button" id="exer11" onclick="ejercicio11()">
+            Ejercicio 11
+        </button>
+        <button type="button" id="exer12" onclick="ejercicio12()">
+            Ejercicio 12
+        </button>
+        <button type="button" id="exer13" onclick="ejercicio13()">
+            Ejercicio 13
+        </button>
+        <button type="button" id="exer14" onclick="ejercicio14()">
+            Ejercicio 14
+        </button>
+        <button type="button" id="exer15" onclick="ejercicio15()">
+            Ejercicio 15
+        </button>
+        <button type="button" id="exer16" onclick="ejercicio16()">
+            Ejercicio 16
+        </button>
+        <button type="button" id="exer17" onclick="ejercicio17()">
+            Ejercicio 17
+        </button>
+        <button type="button" id="exer18" onclick="ejercicio18()">
+            Ejercicio 18
+        </button>
+        <button type="button" id="exer19" onclick="ejercicio19()">
+            Ejercicio 19
+        </button>
+        <button type="button" id="exer20" onclick="ejercicio20()">
+            Ejercicio 20
+        </button>
+        <button type="button" id="exer21" onclick="ejercicio21()">
+            Ejercicio 21
+        </button>
+        <button type="button" id="exer22" onclick="ejercicio22()">
+            Ejercicio 22
+        </button>
+        <button type="button" id="exer24" onclick="ejercicio24()">
+            Ejercicio 24
+        </button>
+        <button type="button" id="exer25" onclick="ejercicio25()">
+            Ejercicio 25
+        </button>
+        <button type="button" id="exer26" onclick="ejercicio26()">
+            Ejercicio 26
+        </button>
+        <button type="button" id="exer27" onclick="ejercicio27()">
+            Ejercicio 27
+        </button>
+        <button type="button" id="exer28" onclick="ejercicio28()">
+            Ejercicio 28
+        </button>
+        <button type="button" id="exer29" onclick="ejercicio29()">
+            Ejercicio 29
+        </button>
+        <button type="button" id="exer30" onclick="ejercicio30()">
+            Ejercicio 30
+        </button><button type="button" id="exer31" onclick="ejercicio31()">
+            Ejercicio 31
+        </button>
+    </div>
+
+    <div class="formulario">
+        <div id="formulario1">
+                <h2>Contraseña válida</h2>
+                <p>Escribir una función llamada contrasenaValida que reciba un string y retorne true si el string es
+                    igual a "2FjjjbFsuj" o "eoZiugBf&g9".
+                    De lo contrario debe retornar false.</p>
+                <div>
+                    <label for="validar">Ejercicio 1</label>
+                    <input type="text" id="validar">
+                </div>
+                <button onclick="contrasenaValida()">Validar Contraseña</button>
+                <span id="solution1"></span>
+        </div>
+
+        <div id="formulario2">
+                <h2>Calcular impuestos</h2>
+                <p>Escribir una función llamada calcularImpuestos que reciba dos argumentos numéricos: 
+                    edad e ingresos. Si edad es igual o mayor a 18 y los ingresos son iguales o 
+                    mayores a 1000 debe retornar ingresos * 40%. De lo contrario retornar 0.</p>
+                <div>
+                    <label for="edad">Edad</label>
+                    <input type="number" id="edad">
+                </div>
+                <div>
+                    <label for="ingresos">Ingresos</label>
+                    <input type="number" id="ingresos">
+                </div>
+                <button onclick="calcularImpuestos()">Calcular Impuestos</button>
+                <span id="solution2"></span>
+        </div>
+
+        <div id="formulario3">
+                <h2>IMC (Índice de masa corporal)</h2>
+                <p>El índice de masa corporal (IMC), o BMI por sus siglas en inglés, es un valor que determina la cantidad de grasa de una persona.
+                    El BMI se calcula con la siguiente fórmula: peso / altura^2
+                    Escribir una función llamada bmi que reciba dos argumentos: peso y altura, y retorne un string con las siguientes posibilidades:</p>
+                <div>
+                    <label for="peso">Peso</label>
+                    <input type="number" id="peso">
+                </div>
+                <div>
+                    <label for="altura">Altura</label>
+                    <input type="number" id="altura">
+                </div>
+                <button onclick="bmi()">Calcular BMI</button>
+                <span id="solution3"></span>
+        </div>
+
+        <div id="formulario4">
+            <div>
+                <h2>Imprimir un arreglo</h2>
+                <p>Escribir una función llamada imprimirArreglo que reciba un arreglo e imprima cada elemento en una línea a parte:
+                </p>
+                <div>
+                    <label for="arreglo">Arreglo</label>
+                    <input type="text" id="arreglo">
+                </div>
+                <button onclick="imprimirArreglo()">Imprimir</button>
+                <div id="solution4"></div>
+            </div>
+        </div>
+
+        <div id="formulario5">
+            <div>
+                <h2>Número de Likes</h2>
+                <p>Escribe una función llamada likes que reciba un número y retorne un string utilizando el formato de K para miles y M para millones.
+                    Por ejemplo:
+                    1400 se convierte en 1K
+                    34,567 se convierte en 34K
+                    7’456,345 se convierte en 7M.
+                    Si el número es menor a 1000 se debe devolver el mismo número como un string.                    
+                </p>
+                <div>
+                    <label for="likes">Likes</label>
+                    <input type="text" id="likes">
+                </div>
+                <button onclick="likes()">Convertir likes</button>
+                <div id="solution5"></div>
+            </div>
+        </div>
+
+        <div id="formulario6">
+            <div>
+                <h2>FizzBuzz</h2>
+                <p>Escribir una función llamada fizzBuzz que reciba un número y retorne un string de acuerdo a lo siguiente:<br>
+                    "fizz" si el número es múltiplo de 3.<br>
+                    "buzz" si el número es múltiplo de 5.<br>
+                    "fizzbuzz" si el número es múltiplo tanto de 3 como de 5.<br>
+                    Si no cumple ninguna de las condiciones anteriores debe retornar el mismo número.
+                    
+                </p>
+                <div>
+                    <label for="fizzbuzz">Arreglo</label>
+                    <input type="text" id="fizzbuzz">
+                </div>
+                <button onclick="fizzBuzz()">Imprimir</button>
+                <div id="solution6"></div>
+            </div>
+        </div>
+
+        <div id="formulario7">
+            <div>
+                <h2>Contar rango de números</h2>
+                <p>Escribir una función llamada contarRango que reciba dos números y retorne cuántos números que hay entre ellos (excluyéndolos):
+                    Nota: Utiliza un ciclo en tu solución. Puedes asumir que el primer número va a ser menor que el segundo.
+                </p>
+                <div>
+                    <label for="num1">Numero menor</label>
+                    <input type="text" id="num1">
+                </div>
+                <div>
+                    <label for="num2">Numero mayor</label>
+                    <input type="text" id="num2">
+                </div>
+                <button onclick="contarRango()">Imprimir</button>
+                <div id="solution7"></div>
+            </div>
+        </div>
+
+        <div id="formulario8">
+            <div>
+                <h2>Sumar rango de números</h2>
+                <p>Escribir una función llamada sumarRango que reciba dos argumentos: número inicial y número final. La función debe retornar la suma de los números en ese rango (incluyéndolos).
+                    Nota: puedes asumir que el número inicial va a ser menor o igual que el número final.                    
+                </p>
+                <div>
+                    <label for="numStart">Numero menor</label>
+                    <input type="text" id="numStart">
+                </div>
+                <div>
+                    <label for="numEnd">Numero mayor</label>
+                    <input type="text" id="numEnd">
+                </div>
+                <button onclick="sumarRango()">Imprimir</button>
+                <div id="solution8"></div>
+            </div>
+        </div>
+
+        <div id="formulario9">
+            <div>
+                <h2>Número de aes (letra "a")</h2>
+                <p>Escribir una función llamada numeroDeAes que reciba un string y retorne el número de veces que aparece la letra "a":                   
+                </p>
+                <div>
+                    <label for="numeroAses">Numero de As</label>
+                    <input type="text" id="numeroAses">
+                </div>
+                <button onclick="numeroDeAs()">Contar a</button>
+                <div id="solution9"></div>
+            </div>
+        </div>
+
+        <div id="formulario10">
+            <div>
+                <h2>Número de caracteres</h2>
+                <p>Escribir una función llamada numeroDeCaracteres que reciba un string y un caracter (un string de un caracter). La función debe retornar el número de veces que aparece el caracter en el string.
+                </p>
+                <div>
+                    <label for="valorString">Palabra</label>
+                    <input type="text" id="valorString">
+                </div>
+                <div>
+                    <label for="caracter">Caracter</label>
+                    <input type="text" id="caracter">
+                </div>
+                <button onclick="numeroDeCaracteres()">Contar caracter</button>
+                <div id="solution10"></div>
+            </div>
+        </div>
+
+        <div id="formulario11">
+            <div>
+                <h2>Sumar arreglo</h2>
+                <p>Escribir una función llamada sumarArreglo que reciba un arreglo de números y retorne la suma de todos los elementos.
+                </p>
+                <div>
+                    <label for="sumarNumero">Numeros</label>
+                    <input type="text" id="sumarNumero">
+                </div>
+                <button onclick="sumarArreglo()">Suma total</button>
+                <div id="solution11"></div>
+            </div>
+        </div>
+
+        <div id="formulario12">
+            <div>
+                <h2>Multiplicar arreglo</h2>
+                <p>Escribir una función llamada removerCeros que reciba un arreglo de números y retorne un nuevo arreglo excluyendo los ceros (0).
+                </p>
+                <div>
+                    <label for="multiplicarNumero">Numeros</label>
+                    <input type="text" id="multiplicarNumero">
+                </div>
+                <button onclick="multiplicarArreglo()">Multiplicacion total</button>
+                <div id="solution12"></div>
+            </div>
+        </div>
+
+        <div id="formulario13">
+            <div>
+                <h2>Remover ceros</h2>
+                <p>Escribir una función llamada removerCeros que reciba un arreglo de números y retorne un nuevo arreglo excluyendo los ceros (0).
+                </p>
+                <div>
+                    <label for="remover">Numeros</label>
+                    <input type="text" id="remover">
+                </div>
+                <button onclick="removerCeros()">Imprimir</button>
+                <div id="solution13"></div>
+            </div>
+        </div>
+
+        <div id="formulario14">
+            <div>
+                <h2>Sumar arreglo entre el rango</h2>
+                <p>Escribir una función llamada sumarArreglo que reciba tres argumentos: un arreglo de números, la posición inicial y la posición final. La función debe retornar la suma de todos los números dentro del rango (la posición inicial y la posición final, incluyéndolas).
+                    Nota: puedes asumir que la posición inicial va a ser menor o igual a la posición final, y que están dentro de los límites del arreglo.                    
+                </p>
+                <div>
+                    <label for="datoArreglo">Arreglo</label>
+                    <input type="text" id="datoArreglo">
+                </div>
+                <div>
+                    <label for="positionStart">Posicion inicial</label>
+                    <input type="text" id="positionStart">
+                </div>
+                <div>
+                    <label for="positionEnd">Posicion final</label>
+                    <input type="text" id="positionEnd">
+                </div>
+                <button onclick="sumarArr()">Suma total</button>
+                <div id="solution14"></div>
+            </div>
+        </div>
+
+        <div id="formulario15">
+            <div>
+                <h2>Transcribir ADN a ARN</h2>
+                <p>Escribir una función llamada transcribir que reciba un string (una cadena de ADN) y retorne otro string (su complemento ARN).
+                    Los complementos son los siguientes:  </p>
+                <div>
+                    <label for="datoCadena">Cadena</label>
+                    <input type="text" id="datoCadena">
+                </div>
+                <button onclick="transcribir()">Imprimir</button>
+                <div id="solution15"></div>
+            </div>
+        </div>
+
+        <div id="formulario16">
+            <div>
+                <h2>Capitalizar palabra</h2>
+                <p>Escribir una función llamada capitalizar que reciba un string y capitalice la primera letra:</p>
+                <div>
+                    <label for="capitalizar">Palabra</label>
+                    <input type="text" id="capitalizar">
+                </div>
+                <button onclick="capitalizar()">Imprimir</button>
+                <div id="solution16"></div>
+            </div>
+        </div>
+
+        <div id="formulario17">
+            <div>
+                <h2>Capitalizar palabra</h2>
+                <p>Escribir una función llamada capitalizar que reciba un string y capitalice la primera letra de cada palabra:</p>
+                <div>
+                    <label for="capitalizarPalabra">Palabra</label>
+                    <input type="text" id="capitalizarPalabra">
+                </div>
+                <button onclick="capitalizar2()">Imprimir</button>
+                <div id="solution17"></div>
+            </div>
+        </div>
+
+        <div id="formulario18">
+            <div>
+                <h2>Encontrar el número máximo</h2>
+                <p>Escribir una función llamada max que reciba un arreglo de números y retorne el número máximo::</p>
+                <div>
+                    <label for="max">Arreglo de numeros</label>
+                    <input type="text" id="max">
+                </div>
+                <button onclick="max()">Imprimir</button>
+                <div id="solution18"></div>
+            </div>
+        </div>
+
+        <div id="formulario19">
+                <h2>Encontrar el número mínimo</h2>
+                <p>Escribir una función llamada min que reciba un arreglo de números y retorne el número mínimo:
+                    Nota: Intentarlo hacer sin el método Math.min de JavaScript.
+                    </p>
+                <div>
+                    <label for="min">Arreglo de numeros</label>
+                    <input type="text" id="min">
+                </div>
+                <button onclick="min()">Imprimir</button>
+                <div id="solution19"></div>
+        </div>
+
+        <div id="formulario20">
+                <h2>Generar contraseña</h2>
+                <p>Escribir una función llamada password que reciba un string y retorne un nuevo string realizando los siguientes cambios:
+                    Las mayúsculas se reemplazan por minúsculas.<br>
+                    Se eliminan los espacios en blanco.<br>
+                    Reemplaza el caracter “a” por “4”.<br>
+                    Reemplaza el caracter “e” por “3”.<br>
+                    Reemplaza el caracter “i” por “1”.<br>
+                    Reemplaza el caracter “o” por “0”.<br>
+                    </p>
+                <div>
+                    <label for="password">Palabra</label>
+                    <input type="text" id="password">
+                </div>
+                <button onclick="password()">Imprimir</button>
+                <div id="solution20"></div>
+        </div>
+
+        <div id="formulario21">
+                <h2>Encontrar números pares en un arreglo</h2>
+                <p>Escribir una función llamada pares que reciba un arreglo de números y retorne un nuevo arreglo con los números pares únicamente.</p>
+                <div>
+                    <label for="pares">Arreglo pares</label>
+                    <input type="text" id="pares">
+                </div>
+                <button onclick="pares()">Imprimir</button>
+                <div id="solution21"></div>
+        </div>
+
+        <div id="formulario22">
+                <h2> Encontrar posiciones de números pares</h2>
+                <p>Escribir una función llamada posiciones que reciba un arreglo de números y retorne un nuevo arreglo con las posiciones donde se encuentran números pares.</p>
+                <div>
+                    <label for="positionPares">Arreglo pares</label>
+                    <input type="text" id="positionPares">
+                </div>
+                <button onclick="positionPares()">Imprimir</button>
+                <div id="solution22"></div>
+        </div>
+
+        <div id="formulario23">
+                <h2> 23 Duplicar elementos de un arreglo</h2>
+                <p>Escribir una función llamada duplicar que reciba un arreglo de números y retorne un nuevo arreglo donde cada número esté multiplicado por dos (2).</p>
+                <div>
+                    <label for="duplicar">Arreglo pares</label>
+                    <input type="text" id="duplicar">
+                </div>
+                <button onclick="duplicar()">Duplicar</button>
+                <div id="solution23"></div>
+        </div>
+
+        <div id="formulario24">
+                <h2>24. Encontrar palabras que empiecen por "a"</h2>
+                <p>Escribir una función llamada empiezanConA que reciba un arreglo de strings y retorne un nuevo arreglo con todas las palabras que empiecen por "a" (mayúscula o minúscula).</p>
+                <div>
+                    <label for="arregloA">Arreglo por A</label>
+                    <input type="text" id="arregloA">
+                </div>
+                <button onclick="empiezanConA()">Imprimir</button>
+                <div id="solution24"></div>
+        </div>
+
+        <div id="formulario25">
+                <h2>25. Encontrar palabras que terminan en "s"</h2>
+                <p>Escribir una función llamada terminanConS que reciba un arreglo de strings y retorne un nuevo arreglo con todas las palabras que terminan con "s" (mayúscula o minúscula).</p>
+                <div>
+                    <label for="terminaS">Arreglo por S</label>
+                    <input type="text" id="terminaS">
+                </div>
+                <button onclick="terminanConS()">Imprimir</button>
+                <div id="solution25"></div>
+        </div>
+
+        <div id="formulario26">
+                <h2>26. Imprimir una matriz</h2>
+                <p>Escribir una función llamada imprimirMatriz que reciba una matriz (un arreglo de arreglos) e imprima todos los elementos del arreglo.</p>
+                <div>
+                    <label for="arregloArr">Arreglo count</label>
+                    <input type="text" id="arregloArr">
+                </div>
+                <button onclick="imprimirMatriz()">Imprimir</button>
+                <div id="solution26"></div>
+        </div>
+
+        <div id="formulario27">
+                <h2>27. Traducir números a palabras</h2>
+                <p>Escribir una función llamada numerosAPalabras que reciba un arreglo de números (cada número en el rango de 0 a 9) y retorne un nuevo arreglo convirtiendo cada número a su versión en palabras.</p>
+                <div>
+                    <label for="numerosAPalabras">Arreglo a palabras</label>
+                    <input type="text" id="numerosAPalabras">
+                </div>
+                <button onclick="numerosAPalabras()">Imprimir</button>
+                <div id="solution27"></div>
+        </div>
+
+        <div id="formulario28">
+                <h2>28. Traducir palabras a números</h2>
+                <p>Escribir una función llamada palabrasANumeros que reciba un arreglo de strings y retorne un nuevo arreglo traduciendo cada palabra a su versión numérica (del 0 al 9). Si la palabra no es un número traducir a -1.</p>
+                <div>
+                    <label for="palabrasANumeros">Palabra a Numeros</label>
+                    <input type="text" id="palabrasANumeros">
+                </div>
+                <button onclick="palabrasANumeros()">Imprimir</button>
+                <div id="solution28"></div>
+        </div>
+
+        <div id="formulario29">
+                <h2>29. Número de asteriscos en un arreglo</h2>
+                <p>Escribir una función llamada numAsteriscos que reciba un arreglo y retorne el número de asteriscos:</p>
+                <div>
+                    <label for="numAsteriscos">Arreglo por Asterisco</label>
+                    <input type="text" id="numAsteriscos">
+                </div>
+                <button onclick="numAsteriscos()">Imprimir</button>
+                <div id="solution29"></div>
+        </div>
+
+        <div id="formulario30">
+                <h2>30. Número de asteriscos en una matriz</h2>
+                <p>Escribir una función llamada numAsteriscos que reciba una matriz (un arreglo de arreglos) y retorne el número de asteriscos:</p>
+                <div>
+                    <label for="numAsteriscos">Arreglo por S</label>
+                    <input type="text" id="numAsteriscos">
+                </div>
+                <button onclick="numAsteriscos()">Imprimir</button>
+                <div id="solution30"></div>
+        </div>
+
+        <div id="formulario31">
+                <h2>31. Distancia entre dos strings</h2>
+                <p>Escribir una función llamada distancia que reciba dos strings y retorne el número de caracteres diferentes (comparando posición por posición).
+                    Nota: Puedes asumir que los strings siempre tienen la misma longitud. Sin embargo, si quieres agregarle más dificultad puedes pensar cómo solucionarlo si un string es más largo que el otro (la diferencia entre las longitudes agregaría al resultado).
+                    </p>
+                <div>
+                    <label for="palabraNew1">Cadena 1</label>
+                    <input type="text" id="palabraNew1">
+                </div>
+                <div>
+                    <label for="palabraNew2">Cadena 2</label>
+                    <input type="text" id="palabraNew2">
+                </div>
+                <button onclick="distancia()">Imprimir</button>
+                <div id="solution31"></div>
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
