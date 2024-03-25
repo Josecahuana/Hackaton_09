@@ -25,10 +25,11 @@ body{
 }
 
 
-.form{
+.formulario{
     width: 50%;
     min-height: 100vh;
-    background-color: black;
+    padding: 30px;
+    
 }
 
 
@@ -38,45 +39,12 @@ body{
     height: 120px;
     background-color: aquamarine;
 }
-#form2{
-    display: none;
-    width: 420px;
-    height: 120px;
-    background-color: blueviolet;
-}
-#form2{
-    display: none;
-    width: 420px;
-    height: 120px;
-    background-color: blueviolet;
-}
-#form2{
-    display: none;
-    width: 420px;
-    height: 120px;
-    background-color: blueviolet;
+
+
+.activo{
+    display: block;
 }
 
-
-
-
-.solution4{
-    width: 40px;
-    height: 120px;
-}
-
-
-
-.formulario > div{
-    width: 450px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 20px 30px;
-    border: 1px solid red;
-}
-
-.formulario > div{
+.desactivo{
     display: none;
 }
-

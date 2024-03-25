@@ -137,12 +137,13 @@ function anadirAttribute(form, exer) {
     const dato = `#${form}`;
     const form1 = document.querySelector(dato);
     const exer1 = document.querySelector(exer);
-    for(let i = 0; i < formulario.children.length; i ++){
-        if(String(formulario.children[i].id) ===  form){
-            form1.style.display = 'block';
+    for (let i = 0; i < formulario.children.length; i++) {
+        if (String(formulario.children[i].id) === form) {
+            form1.classList.toggle('desactivo');
             exer1.setAttribute('disabled', '');
-        }else{
-            form1.style.display = 'none';
+        } else {
+            form1.classList.remove('activo');
+            form1.classList.add('desactivo');
         }
     }
 
@@ -539,13 +540,23 @@ function terminanConS() {
 
 }
 
-//26  FALTA  ---JSONPARSE
-// function imprimirMatriz() {
-//     const arregloArr = document.querySelector('#arregloArr').value;
-//     let datoArreglo = JSON.parse(arregloArr);
-//     console.log(datoArreglo);
-// }
-
+//26  ---- solo recibe arrays de numeros
+function imprimirMatriz() {
+    const arregloArr = document.querySelector('#arregloArr').value;
+    let datoArreglo = JSON.parse(arregloArr);
+    console.log(datoArreglo);
+    let imprimir = [];
+    datoArreglo.forEach(dato => {
+        if (typeof dato == 'object') {
+            dato.forEach(char => {
+                imprimir.push(char);
+            })
+        } else {
+            imprimir.push(dato);
+        }
+    });
+    document.querySelector('#solution26').textContent = '[' + imprimir + ']';
+}
 
 //
 function numerosAPalabras() {
@@ -661,6 +672,25 @@ function numAsteriscos() {
     })
     document.querySelector('#solution30').textContent = imprimir;
 }
+
+// function datos() {
+//     const arr = [1, 3, [4, 5, 6], 1, 2];
+//     let imprimir = [];
+//     arr.forEach(dato => {
+//         if (typeof dato == 'object') {
+//             dato.forEach(char => {
+//                 imprimir.push(char);
+//             })
+//         } else {
+//             imprimir.push(dato);
+//         }
+//     });
+//     document.querySelector('#solution31').textContent = imprimir;
+// }
+
+
+
+
 
 
 //31
