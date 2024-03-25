@@ -656,42 +656,25 @@ function numAsteriscos() {
     }
 }
 
-//30 -- FALTA
-function numAsteriscos() {
-    const numAsteriscos = document.querySelector('#numAsteriscos').value;
-    let datoArreglo = JSON.parse(numAsteriscos);
+//30
+function numAsteriscos1() {
+    const numAsteriscos1 = document.querySelector('#numAsteriscos1').value;
+    let datoArreglo = JSON.parse(numAsteriscos1);
     let imprimir = 0;
     datoArreglo.forEach(dato => {
-        for (let i = 0; i < dato.length; i++) {
-            if (dato[i] === '*') {
-                imprimir += 1;
-            } else {
-                imprimir += 0;
-            }
+        if (typeof dato == 'object') {
+            dato.forEach(char => {
+                (char === "*") ? imprimir += 1 : imprimir += 0;
+            })
+        } else {
+            (dato === "*") ? imprimir += 1 : imprimir += 0;
         }
-    })
+    });
     document.querySelector('#solution30').textContent = imprimir;
 }
 
-// function datos() {
-//     const arr = [1, 3, [4, 5, 6], 1, 2];
-//     let imprimir = [];
-//     arr.forEach(dato => {
-//         if (typeof dato == 'object') {
-//             dato.forEach(char => {
-//                 imprimir.push(char);
-//             })
-//         } else {
-//             imprimir.push(dato);
-//         }
-//     });
-//     document.querySelector('#solution31').textContent = imprimir;
-// }
 
-
-
-
-
+//const arr = [["*","","*"],["","*",""],["*","","*"],"*"];
 
 //31
 function distancia() {
