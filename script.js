@@ -154,15 +154,15 @@ function anadirAttribute(form, exer) {
 
 /****************************************************************************************/
 
-/*EJERCICIO 1*/
+/*EJERCICIO 1*/ //LISTO
 function contrasenaValida() {
     const validar = document.querySelector('#validar');
-    return (validar.value === '2FjjjbFsuj' || validar.value === 'eoZiugBf&g9') ? document.querySelector('#solution1').textContent = 'true' : document.querySelector('#solution1').textContent = 'false';;
+    return (validar.value === '2Fj(jjbFsuj' || validar.value === 'eoZiugBf&g9') ? document.querySelector('#solution1').textContent = 'true' : document.querySelector('#solution1').textContent = 'false';;
 
 }
 
 
-/*EJERCICIO 2*/
+/*EJERCICIO 2*/ //LISTO
 function calcularImpuestos() {
     const edad = Number(document.querySelector('#edad').value);
     const ingresos = Number(document.querySelector('#ingresos').value);
@@ -171,7 +171,7 @@ function calcularImpuestos() {
 }
 
 
-/*EJERCICIO 3*/
+/*EJERCICIO 3*/ //LISTO
 function bmi() {
     const peso = Number(document.querySelector('#peso').value);
     const altura = Number(document.querySelector('#altura').value);
@@ -193,37 +193,38 @@ function bmi() {
 }
 
 
-/*ejercicio 4*/
+/*ejercicio 4*/ //LISTO
 function imprimirArreglo() {
     const arreglo = document.querySelector('#arreglo').value;
-    let arr = arreglo.split(' ');
-    let dato = "";
-    for (let i = 0; i < arr.length; i++) {
-        dato += `<span>${arr[i]}</span></br>`;
-    }
-    document.querySelector('#solution4').innerHTML = dato;
+    let datoArreglo = JSON.parse(arreglo);
+    let imprimir = "";
+    datoArreglo.forEach(dato => {
+        imprimir += dato + ' ';
+    });
+
+    document.querySelector('#solution4').innerHTML = imprimir;
 
 }
 
 
-//ejercicio 5
+//ejercicio 5 //LISTO
 function likes() {
     let likes = Number(document.querySelector('#likes').value);
 
     if (likes >= 1000000) {
-        likes = (likes / 1000000) + "M"
-        return document.querySelector('#solution5').textContent = likes;
+        likes = (likes / 1000000)
+        return document.querySelector('#solution5').textContent = Math.trunc(likes) + 'M';
     }
     else if (likes >= 1000) {
-        likes = (likes / 1000) + "K";
-        return document.querySelector('#solution5').textContent = likes;
+        likes = (likes / 1000);
+        return document.querySelector('#solution5').textContent = Math.trunc(likes) + 'K';
     } else {
         likes = likes + ''
         return document.querySelector('#solution5').textContent = likes;
     }
 }
 
-//ejercicio 6
+//ejercicio 6 //LISTO
 function fizzBuzz() {
     const fizzBuzz = Number(document.querySelector('#fizzbuzz').value);
 
@@ -234,36 +235,38 @@ function fizzBuzz() {
     } else if (fizzBuzz % 5 === 0) {
         return document.querySelector('#solution6').textContent = 'buzz';
     } else {
-        return document.querySelector('#solution6').textContent = 'No es multiplo de 3 o 5';
+        return document.querySelector('#solution6').textContent = fizzBuzz;
     }
 }
 
-//ejercicio 7
+//ejercicio 7  //LISTO
 function contarRango() {
     const num1 = Number(document.querySelector('#num1').value);
     const num2 = Number(document.querySelector('#num2').value);
-    let total = '';
+    let total = 0;
     for (let i = num1; i < num2; i++) {
-        total += i;
+        total += 1;
     }
-    document.querySelector('#solution7').textContent = `${total.length - 1}`;
+    document.querySelector('#solution7').textContent = `${total - 1}`;
 }
 
-//ejercicio 8
+//ejercicio 8 //LISTO
 function sumarRango() {
     const numStart = Number(document.querySelector('#numStart').value);
     const numEnd = Number(document.querySelector('#numEnd').value);
     let suma = 0;
-    for (let i = numStart; i <= numEnd; i++) {
-        suma += i;
+    if (numStart !== numEnd) {
+        for (let i = numStart; i <= numEnd; i++) {
+            suma += i;
+        }
+    } else {
+        suma = 0;
     }
-    console.log(suma);
-
     document.querySelector('#solution8').textContent = suma;
 
 }
 
-//
+//ejercicio 9 //LISTO
 function numeroDeAs() {
     const numeroAses = document.querySelector('#numeroAses').value;
     let dato = numeroAses.split('');
@@ -276,11 +279,10 @@ function numeroDeAs() {
     document.querySelector('#solution9').textContent = total;
 }
 
-//
+//ejercicio 10 //LISTO
 function numeroDeCaracteres() {
     const valorString = document.querySelector('#valorString').value;
     const caracter = document.querySelector('#caracter').value;
-
     let dato = valorString.split('');
     let total = 0;
     dato.forEach(data => {
@@ -291,66 +293,63 @@ function numeroDeCaracteres() {
     document.querySelector('#solution10').textContent = total;
 }
 
-//
+//ejercicio 11 //LISTO
 function sumarArreglo() {
     const sumarNumero = document.querySelector('#sumarNumero').value;
-    let numeroArreglo = sumarNumero.split(' ');
+    let numeroArreglo = JSON.parse(sumarNumero);
     let suma = 0;
     numeroArreglo.forEach(numero => {
-        suma += Number(numero);
+        suma += numero;
     })
     document.querySelector('#solution11').textContent = suma;
 
 }
 
 
-//
+//ejercicio 12 //LISTO
 function multiplicarArreglo() {
     const multiplicarNumero = document.querySelector('#multiplicarNumero').value;
-    let numeroArreglo = multiplicarNumero.split(' ');
+    let numeroArreglo = JSON.parse(multiplicarNumero);
     let multiplicar = 1;
     numeroArreglo.forEach(numero => {
-        if (numero !== '0') {
-            multiplicar *= Number(numero);
-        } else {
-            multiplicar += 0;
-        }
+        (numero !== '0') ? multiplicar *= numero : multiplicar += 0;
     })
     document.querySelector('#solution12').textContent = multiplicar;
 }
 
 
-//
+//ejercicio 13  // LISTO
 function removerCeros() {
     const remover = document.querySelector('#remover').value;
-    let numeroArreglo = remover.split(' ');
-    let total = [];
-    const result = numeroArreglo.filter(numero => Number(numero) !== 0);
-
-    document.querySelector('#solution13').textContent = `[${result}]`;
-
+    if (remover !== '') {
+        let numeroArreglo = JSON.parse(remover);
+        const result = numeroArreglo.filter(numero => numero !== 0);
+        document.querySelector('#solution13').textContent = JSON.stringify(result);
+    } else {
+        document.querySelector('#solution13').textContent = 'Ingresar valor';
+    }
 }
 
-//FALTAAAAA
+//ejercicio 14  //LISTO
 function sumarArr() {
     const datoArreglo = document.querySelector('#datoArreglo').value;
     const positionStart = Number(document.querySelector('#positionStart').value);
     const positionEnd = Number(document.querySelector('#positionEnd').value);
-
-    let numeroArreglo = datoArreglo.split(' ');
+    let numeroArreglo = JSON.parse(datoArreglo);
     let sum = 0;
-    for (let i = 0; i < numeroArreglo.length; i++) {
-        if (positionStart === positionEnd) {
-            break;
-        } else if (numeroArreglo[i] >= numeroArreglo[positionStart] && numeroArreglo[i] <= numeroArreglo[positionEnd]) {
-            sum += Number(numeroArreglo[i]);
+    numeroArreglo.forEach((dato, index) => {
+        if (positionEnd > numeroArreglo.length - 1 || positionEnd === positionStart || positionStart > positionEnd) {
+            sum += 0
+        } else if (Number(index) >= positionStart && Number(index) <= positionEnd) {
+            sum += Number(dato);
+        } else {
+
         }
-    }
+    });
     document.querySelector('#solution14').textContent = sum;
 }
 
-
-//
+//ejercicio 15  //LISTO
 function transcribir() {
     const datoCadena = document.querySelector('#datoCadena').value;
     let datoArreglo = datoCadena.split('');
@@ -368,28 +367,20 @@ function transcribir() {
             imprimir += dato
         }
     })
-
     document.querySelector('#solution15').textContent = imprimir;
-
 }
 
-//
+//ejercicio 16 //LISTO
 function capitalizar() {
     const capitalizar = document.querySelector('#capitalizar').value;
     let imprimir = '';
-
     for (let i = 0; i < capitalizar.length; i++) {
-        if (i === 0) {
-            imprimir += capitalizar[i].toUpperCase();
-        } else {
-            imprimir += capitalizar[i].toLowerCase();
-        }
+        (i === 0) ? imprimir += capitalizar[i].toUpperCase() : imprimir += capitalizar[i].toLowerCase();
     }
-
     document.querySelector('#solution16').textContent = imprimir;
 }
 
-//
+//ejercicio 17 //LISTO
 function capitalizar2() {
     const capitalizarPalabra = document.querySelector('#capitalizarPalabra').value;
     let datoArreglo = capitalizarPalabra.split(' ');
@@ -397,266 +388,221 @@ function capitalizar2() {
     for (let i = 0; i < datoArreglo.length; i++) {
         imprimir += datoArreglo[i].charAt(0).toUpperCase() + datoArreglo[i].slice(1) + ' ';
     }
-
     document.querySelector('#solution17').textContent = imprimir;
 }
 
-//
+//ejercicio 18 //LISTO
 function max() {
     const max = document.querySelector('#max').value;
-    let datoArreglo = max.split(' ');
-
-
-    const result = datoArreglo.sort((a, b) => Number(a) - Number(b))
-
+    let datoArreglo = JSON.parse(max);
+    const result = datoArreglo.sort((a, b) => a - b)
     let total = result[result.length - 1];
-
     document.querySelector('#solution18').textContent = total;
 }
 
-
-//
+//ejercicio 19 //LISTO
 function min() {
     const min = document.querySelector('#min').value;
-    let datoArreglo = min.split(' ');
-
-
-    const result = datoArreglo.sort((a, b) => Number(a) - Number(b))
-
+    let datoArreglo = JSON.parse(min);
+    const result = datoArreglo.sort((a, b) => a - b)
     let total = result[0];
-
     document.querySelector('#solution19').textContent = total;
 }
 
-
-//
+//ejercicio 20 //LISTO
 function password() {
     const password = document.querySelector('#password').value;
     let datoArreglo = password.split('');
-
     let imprimir = '';
     datoArreglo.forEach(dato => {
         if (dato === 'a') {
-            imprimir += '4'
+            imprimir += 4
         } else if (dato === 'e') {
-            imprimir += '3'
+            imprimir += 3
         } else if (dato === 'i') {
-            imprimir += '1'
+            imprimir += 1
         } else if (dato === 'o') {
-            imprimir += '0'
+            imprimir += 0
         } else {
-
             imprimir += dato.toLowerCase();
         }
     })
-
     document.querySelector('#solution20').textContent = imprimir.replaceAll(' ', '');
-
 }
 
-//
+//ejercicio 21 //LISTO
 function pares() {
     const pares = document.querySelector('#pares').value;
-    let datoArreglo = pares.split('');
-    const result = datoArreglo.filter(numero => Number(numero) % 2 === 0);
-
-    document.querySelector('#solution21').textContent = result;
+    let datoArreglo = JSON.parse(pares);
+    const result = datoArreglo.filter(numero => numero % 2 === 0);
+    document.querySelector('#solution21').textContent = JSON.stringify(result);
 }
 
-
-//
+//ejercicio 22 //LISTO
 function positionPares() {
     const positionPares = document.querySelector('#positionPares').value;
-    let datoArreglo = positionPares.split(' ');
-    let imprimir = '';
+    let datoArreglo = JSON.parse(positionPares);
+    let imprimir = [];
     if (datoArreglo) {
         datoArreglo.forEach((dato, index) => {
-            if (Number(dato) % 2 === 0) {
-                imprimir += index;
-            } else {
-                imprimir += '';
+            if (dato % 2 === 0) {
+                imprimir.push(index);
             }
         })
     } else {
-        imprimir = '[]'
+        imprimir += ''
     }
-
-    document.querySelector('#solution22').textContent = imprimir;
+    document.querySelector('#solution22').textContent = JSON.stringify(imprimir);
 }
 
-//23
+//ejercicio 23 //LISTO
 function duplicar() {
     const duplicar = document.querySelector('#duplicar').value;
-    let datoArreglo = duplicar.split(' ');
-    let imprimir = '';
-    const result = datoArreglo.map(dato => {
-        imprimir += (Number(dato) * 2) + ' ';
-    });
-
-    document.querySelector('#solution23').textContent = imprimir;
-
+    let datoArreglo = JSON.parse(duplicar);
+    let imprimir = [];
+    datoArreglo.map(dato => imprimir.push(dato * 2));
+    document.querySelector('#solution23').textContent = JSON.stringify(imprimir);
 }
 
-//24
+//ejercicio 24 //LISTO
 function empiezanConA() {
     const arregloA = document.querySelector('#arregloA').value;
-    let datoArreglo = arregloA.split(' ');
-    let imprimir = '';
+    let datoArreglo = JSON.parse(arregloA);
+    let imprimir = [];
     for (let i = 0; i < datoArreglo.length; i++) {
         if (datoArreglo[i].charAt(0) === 'a' || datoArreglo[i].charAt(0) === 'A') {
-            imprimir += datoArreglo[i] + ' ';
-        } else {
-            imprimir += '';
+            imprimir.push(datoArreglo[i]);
         }
     }
-
     if (!imprimir) {
-        imprimir += '[]'
-        document.querySelector('#solution24').textContent = imprimir;
+        document.querySelector('#solution24').textContent = `[${imprimir}]`;
     } else {
-        document.querySelector('#solution24').textContent = imprimir;
+        document.querySelector('#solution24').textContent = JSON.stringify(imprimir);
     }
-
 }
 
-//25
+//ejercicio 25 //LISTO
 function terminanConS() {
     const terminaS = document.querySelector('#terminaS').value;
-    let datoArreglo = terminaS.split(' ');
-    let imprimir = '';
+    let datoArreglo = JSON.parse(terminaS);
+    let imprimir = [];
     for (let i = 0; i < datoArreglo.length; i++) {
         if (datoArreglo[i].charAt(datoArreglo[i].length - 1) === 's' || datoArreglo[i].charAt(datoArreglo[i].length - 1) === 'S') {
-            imprimir += datoArreglo[i] + ' ';
-        } else {
-            imprimir += '';
+            imprimir.push(datoArreglo[i]);
         }
     }
     if (!imprimir) {
-        imprimir += '[]'
-        document.querySelector('#solution25').textContent = imprimir;
+        document.querySelector('#solution25').textContent = `[${imprimir}]`;
     } else {
-        document.querySelector('#solution25').textContent = imprimir;
+        document.querySelector('#solution25').textContent = JSON.stringify(imprimir);
     }
 
 }
 
-//26  ---- solo recibe arrays de numeros
+//ejercicio 26 //LISTO
 function imprimirMatriz() {
     const arregloArr = document.querySelector('#arregloArr').value;
     let datoArreglo = JSON.parse(arregloArr);
-    console.log(datoArreglo);
-    let imprimir = [];
+    let imprimir = '';
     datoArreglo.forEach(dato => {
         if (typeof dato == 'object') {
             dato.forEach(char => {
-                imprimir.push(char);
+                imprimir += `<span>${char}</span></br>`;
             })
         } else {
-            imprimir.push(dato);
+            imprimir += `<span>${dato}</span></br>`;
         }
     });
-    document.querySelector('#solution26').textContent = '[' + imprimir + ']';
+    document.querySelector('#solution26').innerHTML = imprimir;
 }
+//[[1, 2, 3],[78, 5, 6],[7, 8, 9]]
 
-//
+//ejercicio 27 //LISTO
 function numerosAPalabras() {
     const numerosAPalabras = document.querySelector('#numerosAPalabras').value;
-    let datoArreglo = numerosAPalabras.split(' ');
-    let imprimir = '';
+    let datoArreglo = JSON.parse(numerosAPalabras);
+    let imprimir = [];
 
     datoArreglo.forEach(dato => {
-        if (Number(dato) === 0) {
-            imprimir += 'Cero' + ' ';
-        } else if (Number(dato) === 1) {
-            imprimir += 'Uno' + ' ';
+        if (dato === 0) {
+            imprimir.push('Cero');
+        } else if (dato === 1) {
+            imprimir.push('Uno');
         }
-        else if (Number(dato) === 2) {
-            imprimir += 'Dos' + ' ';
+        else if (dato === 2) {
+            imprimir.push('Dos');
         }
-        else if (Number(dato) === 3) {
-            imprimir += 'Tres' + ' ';
+        else if (dato === 3) {
+            imprimir.push('Tres');
         }
-        else if (Number(dato) === 4) {
-            imprimir += 'Cuatro' + ' ';
+        else if (dato === 4) {
+            imprimir.push('Cuatro');
         }
-        else if (Number(dato) === 5) {
-            imprimir += 'Cinco' + ' ';
+        else if (dato === 5) {
+            imprimir.push('Cinco');
         }
-        else if (Number(dato) === 6) {
-            imprimir += 'Seis' + ' ';
+        else if (dato === 6) {
+            imprimir.push('Seis');
         }
-        else if (Number(dato) === 7) {
-            imprimir += 'Siete' + ' ';
+        else if (dato === 7) {
+            imprimir.push('Siete');
         }
-        else if (Number(dato) === 8) {
-            imprimir += 'Ocho' + ' ';
+        else if (dato === 8) {
+            imprimir.push('Ocho');
         } else {
-            imprimir += 'Nueve' + ' ';
+            imprimir.push('Nueve');
         }
     })
-    document.querySelector('#solution27').textContent = imprimir;
+    document.querySelector('#solution27').textContent = JSON.stringify(imprimir);
 }
 
-//28
+//ejercicio 28 //LISTO
 function palabrasANumeros() {
     const palabrasANumeros = document.querySelector('#palabrasANumeros').value;
-    let datoArreglo = palabrasANumeros.split(' ');
-    let imprimir = '';
-
+    let datoArreglo = JSON.parse(palabrasANumeros);
+    let imprimir = [];
     datoArreglo.forEach(dato => {
         if (dato === 'cero') {
-            imprimir += '0' + ' ';
+            imprimir.push(0);
         } else if (dato === 'uno') {
-            imprimir += '1' + ' ';
-        }
-        else if (dato === 'dos') {
-            imprimir += '2' + ' ';
-        }
-        else if (dato === 'tres') {
-            imprimir += '3' + ' ';
-        }
-        else if (dato === 'cuatro') {
-            imprimir += '4' + ' ';
-        }
-        else if (dato === 'cinco') {
-            imprimir += '5' + ' ';
-        }
-        else if (dato === 'seis') {
-            imprimir += '6' + ' ';
-        }
-        else if (dato === 'siete') {
-            imprimir += '7' + ' ';
-        }
-        else if (dato === 'ocho') {
-            imprimir += '8' + ' ';
+            imprimir.push(1);
+        } else if (dato === 'dos') {
+            imprimir.push(2);
+        }else if (dato === 'tres') {
+            imprimir.push(3);
+        }else if (dato === 'cuatro') {
+            imprimir.push(4);
+        }else if (dato === 'cinco') {
+            imprimir.push(5);
+        }else if (dato === 'seis') {
+            imprimir.push(6);
+        }else if (dato === 'siete') {
+            imprimir.push(7);
+        }else if (dato === 'ocho') {
+            imprimir.push(8);
+        } else if (dato === 'nueve') {
+            imprimir.push(9);
         } else {
-            imprimir += '9' + ' ';
+            imprimir.push(-1);
         }
     })
-    document.querySelector('#solution28').textContent = imprimir;
+    document.querySelector('#solution28').textContent = JSON.stringify(imprimir);
 }
 
-
-//29
+//ejercicio 29 //LISTO
 function numAsteriscos() {
     const numAsteriscos = document.querySelector('#numAsteriscos').value;
-    let datoArreglo = numAsteriscos.split(' ');
+    let datoArreglo = JSON.parse(numAsteriscos);
     let imprimir = 0;
-    datoArreglo.forEach(dato => {
-        if (dato === '*') {
-            imprimir += 1;
-        } else {
-            imprimir += 0;
-        }
-    })
+    datoArreglo.forEach( dato => (dato === '*') ? imprimir += 1 : imprimir += 0 )
     if (imprimir > 0) {
         document.querySelector('#solution29').textContent = imprimir;
     } else {
-        document.querySelector('#solution29').textContent = '[ ]';
+        document.querySelector('#solution29').textContent = imprimir;
     }
 }
 
-//30
+//ejercicio 30 //LISTO
 function numAsteriscos1() {
     const numAsteriscos1 = document.querySelector('#numAsteriscos1').value;
     let datoArreglo = JSON.parse(numAsteriscos1);
@@ -672,11 +618,9 @@ function numAsteriscos1() {
     });
     document.querySelector('#solution30').textContent = imprimir;
 }
+//const arr = [["*","","*"],["","*",""],["*","","*"]];
 
-
-//const arr = [["*","","*"],["","*",""],["*","","*"],"*"];
-
-//31
+//ejercicio 31 //LISTO
 function distancia() {
     const palabraNew1 = document.querySelector('#palabraNew1').value;
     const palabraNew2 = document.querySelector('#palabraNew2').value;
@@ -685,19 +629,11 @@ function distancia() {
     let imprimir = 0;
     if (datoArreglo1.length >= datoArreglo2.length) {
         for (let i = 0; i < datoArreglo1.length; i++) {
-            if (datoArreglo1[i] === datoArreglo2[i]) {
-                imprimir += 0;
-            } else {
-                imprimir += 1;
-            }
+            (datoArreglo1[i] === datoArreglo2[i]) ? imprimir += 0 : imprimir += 1
         }
     } else {
         for (let i = 0; i < datoArreglo2.length; i++) {
-            if (datoArreglo1[i] === datoArreglo2[i]) {
-                imprimir += 0;
-            } else {
-                imprimir += 1;
-            }
+            (datoArreglo1[i] === datoArreglo2[i]) ? imprimir += 0 : imprimir += 1;     
         }
     }
 
