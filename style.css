@@ -28,23 +28,21 @@ body{
 .formulario{
     width: 50%;
     min-height: 100vh;
-    padding: 30px;
-    
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
-#form1{
+
+
+.formulario > div{
     display: none;
-    width: 420px;
-    height: 120px;
-    background-color: aquamarine;
+
 }
 
 
-.activo{
-    display: block;
-}
 
-.desactivo{
-    display: none;
-}
+

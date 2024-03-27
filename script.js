@@ -1,154 +1,24 @@
 const formulario = document.querySelector('.formulario');
+const inputs = document.querySelectorAll('input');
 
-
-function ejercicio1() {
-    disabledButon();
-    anadirAttribute('formulario1', '#exer1');
-}
-function ejercicio2() {
-    disabledButon();
-    anadirAttribute('formulario2', '#exer2');
-}
-function ejercicio3() {
-    disabledButon();
-    anadirAttribute('formulario3', '#exer3');
-}
-function ejercicio4() {
-    disabledButon();
-    anadirAttribute('formulario4', '#exer4');
-}
-function ejercicio5() {
-    disabledButon();
-    anadirAttribute('formulario5', '#exer5');
-}
-function ejercicio6() {
-    disabledButon();
-    anadirAttribute('formulario6', '#exer6');
-}
-function ejercicio7() {
-    disabledButon();
-    anadirAttribute('#formulario7', '#exer7');
-}
-function ejercicio8() {
-    disabledButon();
-    anadirAttribute('#formulario8', '#exer8');
-}
-function ejercicio9() {
-    disabledButon();
-    anadirAttribute('#formulario9', '#exer9');
-}
-function ejercicio10() {
-    disabledButon();
-    anadirAttribute('#formulario10', '#exer10');
-}
-function ejercicio11() {
-    disabledButon();
-    anadirAttribute('#formulario11', '#exer11');
-}
-function ejercicio12() {
-    disabledButon();
-    anadirAttribute('#formulario12', '#exer12');
-}
-function ejercicio13() {
-    disabledButon();
-    anadirAttribute('#formulario13', '#exer13');
-}
-function ejercicio14() {
-    disabledButon();
-    anadirAttribute('#formulario14', '#exer14');
-}
-function ejercicio15() {
-    disabledButon();
-    anadirAttribute('#formulario15', '#exer15');
-}
-function ejercicio16() {
-    disabledButon();
-    anadirAttribute('#formulario16', '#exer16');
-}
-function ejercicio17() {
-    disabledButon();
-    anadirAttribute('#formulario17', '#exer17');
-}
-function ejercicio18() {
-    disabledButon();
-    anadirAttribute('#formulario18', '#exer18');
-}
-function ejercicio19() {
-    disabledButon();
-    anadirAttribute('#formulario19', '#exer19');
-}
-function ejercicio20() {
-    disabledButon();
-    anadirAttribute('#formulario20', '#exer20');
-}
-function ejercicio21() {
-    disabledButon();
-    anadirAttribute('#formulario21', '#exer21');
-}
-function ejercicio22() {
-    disabledButon();
-    anadirAttribute('#formulario22', '#exer22');
-}
-function ejercicio23() {
-    disabledButon();
-    anadirAttribute('#formulario23', '#exer23');
-}
-function ejercicio24() {
-    disabledButon();
-    anadirAttribute('#formulario24', '#exer24');
-}
-function ejercicio25() {
-    disabledButon();
-    anadirAttribute('#formulario25', '#exer25');
-}
-function ejercicio26() {
-    disabledButon();
-    anadirAttribute('#formulario26', '#exer26');
-}
-function ejercicio27() {
-    disabledButon();
-    anadirAttribute('#formulario27', '#exer27');
-}
-function ejercicio28() {
-    disabledButon();
-    anadirAttribute('#formulario28', '#exer28');
-}
-function ejercicio29() {
-    disabledButon();
-    anadirAttribute('#formulario29', '#exer29');
-}
-function ejercicio30() {
-    disabledButon();
-    anadirAttribute('#formulario30', '#exer30');
-}
-function ejercicio31() {
-    disabledButon();
-    anadirAttribute('#formulario31', '#exer31');
+function show(botones, num) {
+    const boton = document.querySelector(botones);
+    clean();
+    cleanInputs();
+    formulario.children[num-1].style.display = 'block';
 }
 
-
-
-function disabledButon() {
-    const boton = document.querySelectorAll('.botons button');
-    boton.forEach(dato => dato.removeAttribute('disabled'));
-
-}
-function anadirAttribute(form, exer) {
-    const dato = `#${form}`;
-    const form1 = document.querySelector(dato);
-    const exer1 = document.querySelector(exer);
+function clean(){
     for (let i = 0; i < formulario.children.length; i++) {
-        if (String(formulario.children[i].id) === form) {
-            form1.classList.toggle('desactivo');
-            exer1.setAttribute('disabled', '');
-        } else {
-            form1.classList.remove('activo');
-            form1.classList.add('desactivo');
-        }
+            formulario.children[i].style.display = 'none'; 
     }
-
 }
 
+function cleanInputs(){
+    inputs.forEach( input =>{
+        input.value = '';
+    })
+}
 
 
 
