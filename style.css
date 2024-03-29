@@ -23,12 +23,62 @@ body {
     padding: 70px;
 }
 
+
 .botons>button {
     height: 70px;
     border: none;
     font-weight: 500;
 
 }
+
+@media (max-width: 1420px) {
+    .botons>button {
+        height: 50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .botons {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .botons>button {
+        height: 50px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .botons {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    }
+
+    .botons>button {
+        height: 50px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 965px) {
+    .botons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        padding: 70px;
+
+    }
+
+    .botons>button {
+        width: 70px;
+        height: 50px;
+        font-size: 12px;
+    }
+}
+
+
+
+/*HEAD*/
 
 h1 {
     position: absolute;
@@ -43,6 +93,14 @@ h1 {
     color: black;
 }
 
+/*BOTONES*/
+.menu {
+    display: none;
+}
+
+
+
+/*FORMULARIO*/
 .formulario {
     width: 50%;
     min-height: 100vh;

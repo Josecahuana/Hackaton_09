@@ -49,9 +49,6 @@ function enableButton(boton) {
         botons.children[i].style.color = 'black';
     }
 }
-
-
-
 /****************************************************************************************/
 
 /*EJERCICIO 1*/ //LISTO
@@ -688,22 +685,22 @@ function numAsteriscos1() {
 function distancia() {
     const palabraNew1 = document.querySelector('#palabraNew1').value;
     const palabraNew2 = document.querySelector('#palabraNew2').value;
-    if(palabraNew1 !== '' && palabraNew2 !== ''){
+    if (palabraNew1 !== '' && palabraNew2 !== '') {
         let datoArreglo1 = palabraNew1.split('');
-    let datoArreglo2 = palabraNew2.split('');
-    let imprimir = 0;
-    if (datoArreglo1.length >= datoArreglo2.length) {
-        for (let i = 0; i < datoArreglo1.length; i++) {
-            (datoArreglo1[i] === datoArreglo2[i]) ? imprimir += 0 : imprimir += 1
+        let datoArreglo2 = palabraNew2.split('');
+        let imprimir = 0;
+        if (datoArreglo1.length >= datoArreglo2.length) {
+            for (let i = 0; i < datoArreglo1.length; i++) {
+                (datoArreglo1[i] === datoArreglo2[i]) ? imprimir += 0 : imprimir += 1
+            }
+        } else {
+            for (let i = 0; i < datoArreglo2.length; i++) {
+                (datoArreglo1[i] === datoArreglo2[i]) ? imprimir += 0 : imprimir += 1;
+            }
         }
-    } else {
-        for (let i = 0; i < datoArreglo2.length; i++) {
-            (datoArreglo1[i] === datoArreglo2[i]) ? imprimir += 0 : imprimir += 1;
-        }
-    }
 
-    document.querySelector('#solution31').textContent = imprimir;
-    }else{
+        document.querySelector('#solution31').textContent = imprimir;
+    } else {
         document.querySelector('#solution31').textContent = 'Rellenar los 2 campos';
     }
 }
