@@ -1,35 +1,36 @@
 *,
 ::before,
-::after{
+::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     width: 100%;
     display: flex;
     position: relative;
     font-family: "Roboto", sans-serif;
 }
 
-.botons{
+.botons {
     width: 50%;
     min-height: 100vh;
     background-color: black;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 20px;
     padding: 70px;
 }
 
-.botons > button{
+.botons>button {
     height: 70px;
     border: none;
     font-weight: 500;
 
 }
 
-h1{
+h1 {
     position: absolute;
     color: white;
     font-weight: 900;
@@ -38,11 +39,11 @@ h1{
     transform: translateX(-50%);
 }
 
-#head-t{
+#head-t {
     color: black;
 }
 
-.formulario{
+.formulario {
     width: 50%;
     min-height: 100vh;
     padding: 70px;
@@ -52,32 +53,49 @@ h1{
 
 }
 
-.formulario > div{
+.formulario>div {
     display: none;
-    
+
 }
 
-h2{
+h2 {
     text-align: center;
     margin-bottom: 10px;
 }
 
-.inputs{
+.inputs {
     display: flex;
     flex-direction: column;
     margin: 30px 0;
-    color: red;
+    color: green;
+    font-weight: 700;
     gap: 15px;
 }
 
-.inputs > input {
+
+.inputs>input {
     width: 300px;
     height: 30px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    font-size: 17px;
+    color: rgb(36, 29, 21);
+
+
+}
+
+.formulario button {
+    background-color: green;
+    border: none;
+    width: 160px;
+    height: 40px;
+    color: white;
 }
 
 
-
-div > span{
+div>span {
     margin-top: 40px;
     width: 100%;
     background-color: #242424;

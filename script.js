@@ -1,20 +1,25 @@
 const formulario = document.querySelector('.formulario');
-const inputs = document.querySelectorAll('input');
 const botons = document.querySelector('.botons');
+const inputs = document.querySelectorAll('input');
+const spans = document.querySelectorAll('.formulario span');
 
 //Mostrar al iniciar
-(() => { formulario.children[0].style.display = 'block' })();
+(() => {
+    formulario.children[0].style.display = 'block';
+    botons.children[0].style.background = 'blue';
+    botons.children[0].style.color = 'white';
+})();
 
 //Boton mostrar ejercicios
 function show(botones, num) {
     const boton = document.querySelector(botones);
-    disabledButton(boton);
+    enableButton(boton);
     clean();
     cleanInputs();
+    cleanDivs();
     formulario.children[num - 1].style.display = 'block';
-    botons.children[num-1].style.background = 'blue';
-    botons.children[num-1].style.color = 'white';
-
+    botons.children[num - 1].style.background = 'blue';
+    botons.children[num - 1].style.color = 'white';
 }
 
 //Limpiar el formulario
@@ -31,7 +36,14 @@ function cleanInputs() {
     })
 }
 
-function disabledButton(boton) {
+function cleanDivs() {
+    spans.forEach(span => {
+        span.textContent = '';
+    })
+}
+
+//Habilitar botones
+function enableButton(boton) {
     for (let i = 0; i < botons.children.length; i++) {
         botons.children[i].style.background = 'white';
         botons.children[i].style.color = 'black';
@@ -45,7 +57,7 @@ function disabledButton(boton) {
 /*EJERCICIO 1*/ //LISTO
 function contrasenaValida() {
     const validar = document.querySelector('#validar');
-    return (validar.value === '2Fj(jjbFsuj' || validar.value === 'eoZiugBf&g9') ? document.querySelector('#solution1').textContent = 'true' : document.querySelector('#solution1').textContent = 'false';;
+    return (validar.value === '2Fj(jjbFsuj' || validar.value === 'eoZiugBf&g9') ? document.querySelector('#solution1').textContent = 'true' : document.querySelector('#solution1').textContent = 'false';
 
 }
 
@@ -90,7 +102,7 @@ function imprimirArreglo() {
         imprimir += dato + ' ';
     });
 
-    document.querySelector('#solution4').innerHTML = `${imprimir} </br>`;
+    document.querySelector('#solution4').innerHTML = imprimir;
 
 }
 
