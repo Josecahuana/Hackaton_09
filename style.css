@@ -8,22 +8,39 @@
 body{
     width: 100%;
     display: flex;
+    position: relative;
+    font-family: "Roboto", sans-serif;
 }
 
 .botons{
     width: 50%;
     min-height: 100vh;
-    background-color: rosybrown;
+    background-color: black;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(120px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
     gap: 20px;
-    padding: 30px;
+    padding: 70px;
 }
 
 .botons > button{
-    height: 90px;
+    height: 70px;
+    border: none;
+    font-weight: 500;
+
 }
 
+h1{
+    position: absolute;
+    color: white;
+    font-weight: 900;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#head-t{
+    color: black;
+}
 
 .formulario{
     width: 50%;
@@ -35,14 +52,38 @@ body{
 
 }
 
-
-
-
 .formulario > div{
     display: none;
+    
+}
 
+h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    color: red;
+    gap: 15px;
+}
+
+.inputs > input {
+    width: 300px;
+    height: 30px;
 }
 
 
 
-
+div > span{
+    margin-top: 40px;
+    width: 100%;
+    background-color: #242424;
+    display: flex;
+    min-height: 80px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

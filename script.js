@@ -1,23 +1,41 @@
 const formulario = document.querySelector('.formulario');
 const inputs = document.querySelectorAll('input');
+const botons = document.querySelector('.botons');
 
+//Mostrar al iniciar
+(() => { formulario.children[0].style.display = 'block' })();
+
+//Boton mostrar ejercicios
 function show(botones, num) {
     const boton = document.querySelector(botones);
+    disabledButton(boton);
     clean();
     cleanInputs();
-    formulario.children[num-1].style.display = 'block';
+    formulario.children[num - 1].style.display = 'block';
+    botons.children[num-1].style.background = 'blue';
+    botons.children[num-1].style.color = 'white';
+
 }
 
-function clean(){
+//Limpiar el formulario
+function clean() {
     for (let i = 0; i < formulario.children.length; i++) {
-            formulario.children[i].style.display = 'none'; 
+        formulario.children[i].style.display = 'none';
     }
 }
 
-function cleanInputs(){
-    inputs.forEach( input =>{
+//Limpiar inputs
+function cleanInputs() {
+    inputs.forEach(input => {
         input.value = '';
     })
+}
+
+function disabledButton(boton) {
+    for (let i = 0; i < botons.children.length; i++) {
+        botons.children[i].style.background = 'white';
+        botons.children[i].style.color = 'black';
+    }
 }
 
 
@@ -72,7 +90,7 @@ function imprimirArreglo() {
         imprimir += dato + ' ';
     });
 
-    document.querySelector('#solution4').innerHTML = imprimir;
+    document.querySelector('#solution4').innerHTML = `${imprimir} </br>`;
 
 }
 
@@ -438,17 +456,17 @@ function palabrasANumeros() {
             imprimir.push(1);
         } else if (dato === 'dos') {
             imprimir.push(2);
-        }else if (dato === 'tres') {
+        } else if (dato === 'tres') {
             imprimir.push(3);
-        }else if (dato === 'cuatro') {
+        } else if (dato === 'cuatro') {
             imprimir.push(4);
-        }else if (dato === 'cinco') {
+        } else if (dato === 'cinco') {
             imprimir.push(5);
-        }else if (dato === 'seis') {
+        } else if (dato === 'seis') {
             imprimir.push(6);
-        }else if (dato === 'siete') {
+        } else if (dato === 'siete') {
             imprimir.push(7);
-        }else if (dato === 'ocho') {
+        } else if (dato === 'ocho') {
             imprimir.push(8);
         } else if (dato === 'nueve') {
             imprimir.push(9);
@@ -464,7 +482,7 @@ function numAsteriscos() {
     const numAsteriscos = document.querySelector('#numAsteriscos').value;
     let datoArreglo = JSON.parse(numAsteriscos);
     let imprimir = 0;
-    datoArreglo.forEach( dato => (dato === '*') ? imprimir += 1 : imprimir += 0 )
+    datoArreglo.forEach(dato => (dato === '*') ? imprimir += 1 : imprimir += 0)
     if (imprimir > 0) {
         document.querySelector('#solution29').textContent = imprimir;
     } else {
@@ -503,9 +521,12 @@ function distancia() {
         }
     } else {
         for (let i = 0; i < datoArreglo2.length; i++) {
-            (datoArreglo1[i] === datoArreglo2[i]) ? imprimir += 0 : imprimir += 1;     
+            (datoArreglo1[i] === datoArreglo2[i]) ? imprimir += 0 : imprimir += 1;
         }
     }
 
     document.querySelector('#solution31').textContent = imprimir;
 }
+
+
+
